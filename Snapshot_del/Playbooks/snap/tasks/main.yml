@@ -1,22 +1,3 @@
-- name: Check all port
-  wait_for:
-    host: "{{ inventory_hostname }}"
-    port: 22
-    delay: 2
-    timeout: 3
-  ignore_errors: yes
-  register: port_out
-  delegate_to: localhost
-  tags: port_check
-
-
-#- name: Port Failed Status
-#  fail:
-#    msg: "Port 22 is not Reachable"
-#  when: port_out is failed
-#  tags: port_check
-
-
 - name: Port Success Status
   debug:
     msg: "Port 22 is Reachable"
