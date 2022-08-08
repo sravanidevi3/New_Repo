@@ -5,5 +5,5 @@
   vars_files:
        - /var/lib/jenkins/workspace/group_vars/aws_cred
 
-- roles: 
-     snap
+  roles: 
+    - snap
