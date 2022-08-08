@@ -1,0 +1,18 @@
+pipeline {
+  
+   agent any
+  
+       stages {
+         
+         stage ('snap') {
+           
+           steps {
+             
+             sh 'ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/Snapshot_del/Playbooks/snap.yml'
+           }
+           
+         }
+         
+       }
+  
+    }
