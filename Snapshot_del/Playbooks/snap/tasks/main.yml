@@ -26,28 +26,28 @@
 - name: create snapshot
   include: snap_create.yml
   vars:
-       Instanceid: "{{ item.0 }}"
+       Instance_id: "{{ item.0 }}"
        Region: "{{ item.1 }}"
-       Tags: "{{ item.2 }}"
+      # Tags: "{{ item.2 }}"
   with_together:
        - "{{ Instance_id }}"
        - "{{ Region }}"
-       - "{{ Tags }}"
+      # - "{{ Tags }}"
   when: Instance_id is defined      
 
 - name: create volume
   include: snap_vol_create.yml
   when: Volume_id is defined
   vars:
-      Volume_id: "{{vol.0 }}"
+      Volume_id: "{{ vol.0 }}"
       Region: "{{ vol.1 }}"
-      Tags: "{{ vol.2}}"
+      Tags: "{{ vol.2 }}"
   with_together:
      - "{{ Volume_id }}"
      - "{{ Region }}"
-     - "{{ tags }}
- # loop_control:
- #         loop_var: vol
+    # - "{{ tags }}
+  loop_control:
+         loop_var: vol
 
 
 
