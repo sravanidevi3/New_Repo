@@ -1,9 +1,3 @@
-- name: Port Success Status
-  debug:
-    msg: "Port 22 is Reachable"
-  when: port_out is success
-  tags: port_check
-
 - name: create snapshot
   include: snap_create.yml
   vars:
