@@ -8,7 +8,7 @@ pipeline {
            
            steps {
              
-             sh 'ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/Snapshot_del/Playbooks/snap.yml'
+             sh 'ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/Snapshot_del/Playbooks/snap.yml --extra-vars Instance_id=${Instance_id} --extra-vars Volume_id=${Volume_id} --extra-vars Region=${Region}'
            }
            
          }
