@@ -22,3 +22,7 @@
     msg: "Port 22 is Reachable"
   when: port_out is success
   tags: port_check
+
+- name: OS Compatibility Test
+  include_tasks: unit_test.yml
+  tags: unittest
