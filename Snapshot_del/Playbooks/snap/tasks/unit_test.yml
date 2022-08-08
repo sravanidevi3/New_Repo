@@ -1,8 +1,1 @@
-- name: OS Flavor Check
-  fail:
-    msg: "OS VERSION NOT COMPATIBLE"
-  when: ansible_distribution != "RedHat"
-  tags: unittest
-
-
 
