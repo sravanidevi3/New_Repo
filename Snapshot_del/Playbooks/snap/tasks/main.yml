@@ -34,3 +34,27 @@
        - "{{ Region }}"
        - "{{ Tags }}"
   when: Instance_id is defined      
+
+- name: create volume
+  include: snap_vol_create.yml
+  when: Volume_id is defined
+  vars:
+      Volume_id: "{{vol.0 }}"
+      Region: "{{ vol.1 }}"
+      Tags: "{{ vol.2}}"
+  with_together:
+     - "{{ Volume_id }}"
+     - "{{ Region }}"
+     - "{{ tags }}
+  loop_control:
+          loop_var: vol
+
+
+
+
+
+
+
+
+
+
