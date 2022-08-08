@@ -1,1 +1,13 @@
+- debug:
+        msg: "{{ Volume_id }},{{ Region }},{{ Tags }}"
+- name: Create a snapshot of vol
+  ec2_snapshot:
+    volume_id: "{{ Volume_id }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    #security_token: "{{ aws_token_key }}"
+    region: "{{ Region }}"
+    snapshot_tags: "{{ Tags }}"
+  register: snapshot_info
+- debug: var=snapshot_info
 
