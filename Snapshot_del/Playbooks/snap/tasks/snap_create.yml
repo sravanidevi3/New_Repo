@@ -1,1 +1,19 @@
+- debug:
+    msg: "{{ InstanceID }},{{Region}}"
 
+- name: Get timestamp from the system
+  shell: "date +%Y-%m-%d%H-%M-%S"
+  register: tstamp
+- debug: var=tstamp
+
+- name: Create a snapshot of VM - AMI
+  ec2_ami:
+          #      aws_access_key: "{{ aws_access_key }}"
+          #      aws_secret_key: "{{ aws_secret_key }}"
+      instance_id: "{{ InstanceID }}"
+      region: "{{ Region }}"
+      wait: yes
+      name: "ami_{{ InstanceID }}_{{tstamp.stdout}}"
+      no_reboot: yes
+  register: snapshot_info
+- debug: var=snapshot_info
