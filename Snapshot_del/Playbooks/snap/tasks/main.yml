@@ -46,8 +46,8 @@
      - "{{ Volume_id }}"
      - "{{ Region }}"
      - "{{ tags }}
-  loop_control:
-          loop_var: vol
+ # loop_control:
+ #         loop_var: vol
 
 
 
