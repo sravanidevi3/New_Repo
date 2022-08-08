@@ -23,6 +23,14 @@
   when: port_out is success
   tags: port_check
 
-- name: OS Compatibility Test
-  include_tasks: unit_test.yml
-  tags: unittest
+- name: create snapshot
+  include: snap_create.yml
+  vars:
+       Instanceid: "{{ item.0 }}"
+       Region: "{{ item.1 }}"
+       Tags: "{{ item.2 }}"
+  with_together:
+       - "{{ Instance_id }}"
+       - "{{ Region }}"
+       - "{{ Tags }}"
+  when: Instance_id is defined      
