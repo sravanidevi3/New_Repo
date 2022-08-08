@@ -1,6 +1,8 @@
 - hosts: linux
   become_user: root
   become: true
+  vars:
+    ansible_python_interpreter: /bin/python3
  
   vars_files:
        - /var/lib/jenkins/workspace/group_vars/aws_cred
