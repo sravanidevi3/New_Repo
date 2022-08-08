@@ -10,11 +10,11 @@
   tags: port_check
 
 
-- name: Port Failed Status
-  fail:
-    msg: "Port 22 is not Reachable"
-  when: port_out is failed
-  tags: port_check
+#- name: Port Failed Status
+#  fail:
+#    msg: "Port 22 is not Reachable"
+#  when: port_out is failed
+#  tags: port_check
 
 
 - name: Port Success Status
