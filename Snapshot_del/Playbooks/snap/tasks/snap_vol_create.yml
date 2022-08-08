@@ -11,3 +11,10 @@
   register: snapshot_info
 - debug: var=snapshot_info
 
+
+
+
+i-039437aebac61cdf4
+vol-08976753b2e671f88
+ap-south-1b
+
