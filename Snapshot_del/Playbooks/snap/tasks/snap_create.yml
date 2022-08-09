@@ -10,10 +10,10 @@
   ec2_ami:
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
-      instance_id: "{{ InstanceID }}"
+      instance_id: "{{ Instance_id }}"
       region: "{{ Region }}"
       wait: yes
-      name: "ami_{{ InstanceID }}_{{tstamp.stdout}}"
+      name: "ami_{{ Instance_id }}_{{tstamp.stdout}}"
       no_reboot: yes
-  register: snapshot_info
-- debug: var=snapshot_info
+  register: snapshot_info_AMI
+- debug: var=snapshot_info_AMI
