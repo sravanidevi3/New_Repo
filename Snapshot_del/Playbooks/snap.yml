@@ -1,12 +1,10 @@
-- hosts: linux
-  become_user: root
-  become: true
+- name: Creating Snapshot
+  hosts: localhost
+  connection: local
   gather_facts: false
-  vars:
-    ansible_python_interpreter: /usr/local/bin/python3.8
  
   vars_files:
-       - /var/lib/jenkins/workspace/group_vars/aws_cred
+       - /ansible_playbooks/group_vars/aws_creds
 
   roles: 
     - snap
