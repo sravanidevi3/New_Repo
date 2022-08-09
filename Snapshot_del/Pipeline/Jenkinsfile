@@ -8,7 +8,7 @@ pipeline {
            
            steps {
              
-             sh "docker exec ansible sh -c 'ansible-playbook /ansible_playbooks/workspace/${JOB_NAME}/Snapshot_del/Playbooks/snap.yml --vault-password-file=/var/lib/jenkins/workspace/vault_pass --extra-vars Instance_id=${Instance_id} --extra-vars Volume_id=${Volume_id} --extra-vars Region=${Region}'"
+             sh "docker exec ansible sh -c 'ansible-playbook /ansible_playbooks/workspace/${JOB_NAME}/Snapshot_del/Playbooks/snap.yml --vault-password-file=/ansible_playbooks/vault_pass --extra-vars Instance_id=${Instance_id} --extra-vars Volume_id=${Volume_id} --extra-vars Region=${Region}'"
            }
            
          }
